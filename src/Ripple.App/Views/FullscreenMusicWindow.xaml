@@ -1,0 +1,61 @@
+<Window x:Class="Ripple.App.Views.FullscreenMusicWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ripple — Immersive Music"
+        WindowStyle="None"
+        WindowState="Maximized"
+        AllowsTransparency="False"
+        Background="#07080D"
+        KeyDown="OnKeyDown">
+    <Grid x:Name="BackdropGrid">
+        <Grid.Background>
+            <RadialGradientBrush x:Name="AuroraBrush" Center="0.35,0.4" RadiusX="0.85" RadiusY="0.85">
+                <GradientStop x:Name="AuroraStop1" Color="#336C8CFF" Offset="0"/>
+                <GradientStop x:Name="AuroraStop2" Color="#18A78BFA" Offset="0.5"/>
+                <GradientStop Color="#06070B" Offset="1"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+
+        <Button Content="✕ Esc to Close"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="24"
+                Padding="14,7"
+                Background="#24FFFFFF"
+                Foreground="White"
+                BorderThickness="0"
+                FontWeight="SemiBold"
+                Cursor="Hand"
+                Click="OnCloseClicked"/>
+
+        <Grid MaxWidth="980" VerticalAlignment="Center" Margin="48">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Width="320" Height="320" CornerRadius="28" Background="#16FFFFFF" ClipToBounds="True" Margin="0,0,48,0">
+                <Image x:Name="ArtworkImage" Stretch="UniformToFill"/>
+            </Border>
+
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                <TextBlock x:Name="SourceBadge" Text="SPOTIFY" Foreground="#94A3B8" FontSize="12" FontWeight="Bold"/>
+                <TextBlock x:Name="TrackTitle" Text="No Track" Foreground="White" FontSize="36" FontWeight="Bold" TextWrapping="Wrap" Margin="0,6,0,4"/>
+                <TextBlock x:Name="TrackArtist" Text="" Foreground="#CBD5E1" FontSize="20" Margin="0,0,0,22"/>
+
+                <!-- Karaoke Synced Lyrics -->
+                <TextBlock x:Name="CurrentLyricText" Text="♪ Waiting for synced lyrics..." Foreground="White" FontSize="22" FontWeight="SemiBold" TextWrapping="Wrap" Margin="0,0,0,6"/>
+                <TextBlock x:Name="NextLyricText" Text="" Foreground="#64748B" FontSize="16" TextWrapping="Wrap" Margin="0,0,0,24"/>
+
+                <!-- Live 24-bar Audio Visualizer -->
+                <StackPanel x:Name="VisualizerPanel" Orientation="Horizontal" Height="72" Margin="0,0,0,20"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Prev" Padding="16,9" Background="#20FFFFFF" Foreground="White" BorderThickness="0" Margin="0,0,10,0" Click="OnPrevClicked" Cursor="Hand"/>
+                    <Button x:Name="PlayPauseBtn" Content="Play / Pause" Padding="20,9" Background="#446C8CFF" Foreground="White" BorderThickness="0" Margin="0,0,10,0" FontWeight="Bold" Click="OnPlayPauseClicked" Cursor="Hand"/>
+                    <Button Content="Next" Padding="16,9" Background="#20FFFFFF" Foreground="White" BorderThickness="0" Click="OnNextClicked" Cursor="Hand"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

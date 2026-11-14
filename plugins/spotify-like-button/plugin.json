@@ -1,0 +1,13 @@
+{
+  "id": "spotify-like-button",
+  "name": "Spotify Quick Like",
+  "version": "1.0.0",
+  "author": "Ripple Samples",
+  "description": "One-tap Favorite / Save current track action inside the Music card",
+  "icon": "♥",
+  "accentHex": "#34D399",
+  "entryType": "local-action",
+  "scriptCommand": "ripple push --title \"Saved Track ♥\" --icon \"♥\" --accent \"#34D399\" --duration 2s",
+  "refreshIntervalSeconds": 0,
+  "permissions": ["media"]
+}

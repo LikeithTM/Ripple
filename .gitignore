@@ -1,0 +1,21 @@
+# Build outputs
+[Bb]in/
+[Oo]bj/
+[Dd]ist/
+[Oo]ut/
+
+# IDE & Editor state
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Runtime logs & temp files
+*.log
+crash.log
+TestResults/
+*.nupkg
+*.snupkg

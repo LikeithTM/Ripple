@@ -1,0 +1,13 @@
+{
+  "id": "github-notifications",
+  "name": "GitHub Notifications",
+  "version": "1.0.0",
+  "author": "Ripple Samples",
+  "description": "Unread PR reviews, CI checks & mentions pulse",
+  "icon": "🐙",
+  "accentHex": "#A78BFA",
+  "entryType": "http-json",
+  "endpointUrl": "https://api.github.com/notifications",
+  "refreshIntervalSeconds": 45,
+  "permissions": ["network"]
+}

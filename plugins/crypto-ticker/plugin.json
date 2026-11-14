@@ -1,0 +1,13 @@
+{
+  "id": "crypto-ticker",
+  "name": "Crypto Ticker",
+  "version": "1.0.0",
+  "author": "Ripple Samples",
+  "description": "Live BTC / ETH price glance & threshold pulse",
+  "icon": "₿",
+  "accentHex": "#F59E0B",
+  "entryType": "http-json",
+  "endpointUrl": "https://api.coinbase.com/v2/prices/BTC-USD/spot",
+  "refreshIntervalSeconds": 60,
+  "permissions": ["network"]
+}
